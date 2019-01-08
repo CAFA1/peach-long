@@ -198,12 +198,12 @@ if __name__ == '__main__':
             fatal("The total number of machines must be less than current machine.")
         logging.debug("Parallel total machines: {}".format(args.parallel[0]))
         logging.debug("Parallel our machine   : {}".format(args.parallel[1]))
-    print args.pit
+    #print args.pit
     if not args.pit and not args.agent:
         logging.error("You must provide a pit or an agent.")
         sys.exit(-1)
-    print '3 '+args.pit
-    print args.parser
+    #print '3 '+args.pit
+    #print args.parser
     if args.test:
         try:
             args.parser.asParser(args.pit)
@@ -251,7 +251,7 @@ if __name__ == '__main__':
     except:
         raise
     finally:
-        if DomBackgroundCopier.copyThread is not None:
+        if DomBackgroundCopier.coverbosepyThread is not None:
             DomBackgroundCopier.stop.set()
             DomBackgroundCopier.needcopies.set()
             DomBackgroundCopier.copyThread.join()
